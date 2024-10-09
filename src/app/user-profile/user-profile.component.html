@@ -1,0 +1,56 @@
+<div class="profile-container">
+    <!-- Profile Picture Section -->
+    <div class="profile-picture">
+      <img src="src/assets" alt="">
+    </div>
+  
+    <!-- Name and Location -->
+    <div class="profile-info">
+      <h1>{{ profile.name }}</h1>
+      <p><strong>Location:</strong> {{ profile.location }}</p>
+      <p><strong>Hourly Rate:</strong> ${{ profile.hourlyRate }} / hour</p>
+    </div>
+  
+    <!-- Bio/Description Section -->
+    <div class="profile-bio">
+      <h2>Bio</h2>
+      <p>{{ profile.bio }}</p>
+    </div>
+  
+    <!-- Skills Section -->
+    <div class="profile-skills">
+      <h2>Skills</h2>
+      <ul>
+        <li *ngFor="let skill of profile.skills">{{ skill }}</li>
+      </ul>
+    </div>
+  
+    <!-- Portfolio Section -->
+    <div class="profile-portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-item" *ngFor="let portfolioItem of profile.portfolio">
+        <a [href]="portfolioItem.link" target="_blank">
+          <img [src]="portfolioItem.image" alt="{{ portfolioItem.title }}" />
+          <p>{{ portfolioItem.title }}</p>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Social Media Links -->
+    <div class="profile-social">
+      <h2>Social Media Links</h2>
+      <ul>
+        <li *ngFor="let link of profile.socialMedia">
+          <a [href]="link.url" target="_blank">{{ link.platform }}</a>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Contact Information -->
+    <div class="profile-contact">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> {{ profile.contact.email }}</p>
+      <p><strong>Phone:</strong> {{ profile.contact.phone }}</p>
+    </div>
+  </div>
+  

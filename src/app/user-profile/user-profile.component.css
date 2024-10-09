@@ -1,0 +1,47 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .profile-info h1 {
+    font-size: 2em;
+  }
+  
+  .profile-bio, .profile-skills, .profile-portfolio, .profile-social, .profile-contact {
+    margin-top: 20px;
+  }
+  
+  .portfolio-item {
+    margin-bottom: 15px;
+  }
+  
+  .portfolio-item img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .portfolio-item p {
+    font-size: 1.1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+  
