@@ -1,14 +1,14 @@
 <div class="profile-container">
     <!-- Profile Picture Section -->
     <div class="profile-picture">
-      <img src="src/assets" alt="">
-    </div>
+        <img src="assets/deadpool1.jpg" alt="Profile Picture">
+      </div>
   
     <!-- Name and Location -->
     <div class="profile-info">
       <h1>{{ profile.name }}</h1>
       <p><strong>Location:</strong> {{ profile.location }}</p>
-      <p><strong>Hourly Rate:</strong> ${{ profile.hourlyRate }} / hour</p>
+      <p><strong>Hourly Rate:</strong> R{{ profile.hourlyRate }} / hour</p>
     </div>
   
     <!-- Bio/Description Section -->
@@ -39,11 +39,9 @@
     <!-- Social Media Links -->
     <div class="profile-social">
       <h2>Social Media Links</h2>
-      <ul>
-        <li *ngFor="let link of profile.socialMedia">
-          <a [href]="link.url" target="_blank">{{ link.platform }}</a>
-        </li>
-      </ul>
+      <div *ngFor="let social of socialMedia">
+        <a [href]="social.url" target="_blank">{{ social.platform }}</a>
+      </div>
     </div>
   
     <!-- Contact Information -->
@@ -52,5 +50,9 @@
       <p><strong>Email:</strong> {{ profile.contact.email }}</p>
       <p><strong>Phone:</strong> {{ profile.contact.phone }}</p>
     </div>
+
+    <div class="text-list"><div class="text-item" *ngFor="let text of textItems">
+        {{ text }}
+    </div></div>
   </div>
   

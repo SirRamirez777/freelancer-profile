@@ -6,8 +6,8 @@
   
   .profile-picture img {
     width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    height: 100px;
+    border-radius: 20%;
   }
   
   .profile-info h1 {
@@ -43,5 +43,13 @@
   a {
     text-decoration: none;
     color: blue;
+  }
+  :host {
+    display: block;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('/assets/ironmanbg2.jpg');
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
   }
   
