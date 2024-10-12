@@ -1,58 +1,66 @@
 @if(profile){
-  <div class="profile-container">
-    <!-- Profile Picture Section -->
-    <div class="profile-picture">
-        <img src="assets/deadpool1.jpg" alt="Profile Picture">
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 left-pane">
+    <img [src]="profile.profilePicture" alt="Profile Picture" class="img-thumbnail img-fluid">
+
+      <!-- Name and Location -->
+      <div class="profile-info">
+        <h1>{{ profile.name }}</h1>
+        <p><strong>Location:</strong> {{ profile.location }}</p>
+        <p><strong>Hourly Rate:</strong> R{{ profile.hourlyRate }} / hour</p>
       </div>
-  
-    <!-- Name and Location -->
-    <div class="profile-info">
-      <h1>{{ profile.name }}</h1>
-      <p><strong>Location:</strong> {{ profile.location }}</p>
-      <p><strong>Hourly Rate:</strong> R{{ profile.hourlyRate }} / hour</p>
-    </div>
-  
-    <!-- Bio/Description Section -->
-    <div class="profile-bio">
-      <h2>Bio</h2>
-      <p>{{ profile.bio }}</p>
-    </div>
-  
-    <!-- Skills Section -->
-    <div class="profile-skills">
-      <h2>Skills</h2>
-      <ul>
-        <li *ngFor="let skill of profile.skills">{{ skill }}</li>
-      </ul>
-    </div>
-  
-    <!-- Portfolio Section -->
-    <div class="profile-portfolio">
-      <h2>Portfolio</h2>
-      <div class="portfolio-item" *ngFor="let portfolioItem of profile.portfolio">
-        <a [href]="portfolioItem.link" target="_blank">
-          <img [src]="portfolioItem.image" alt="{{ portfolioItem.title }}" />
-          <p>{{ portfolioItem.title }}</p>
-        </a>
+
+      <!-- Bio/Description Section -->
+      <div class="profile-bio">
+        <h2>Bio</h2>
+        <p>{{ profile.bio }}</p>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="profile-skills">
+        <h2>Skills</h2>
+        <ul>
+          @for(skill of profile.skills; track skill){
+          <li>{{ skill }}</li>
+          }
+
+        </ul>
       </div>
     </div>
-  
-    <!-- Social Media Links -->
-    <div class="profile-social">
-      <h2>Social Media Links</h2>
-      <!-- <div *ngFor="let social of socialMedia"> -->
-        <a [href]="profile.socialLinks.github" target="_blank">{{ profile.socialLinks.github }}</a>
+
+
+    <div class="col-8 right-pane">
+      <!-- Portfolio Section -->
+      <div class="profile-portfolio">
+        <h2>Portfolio</h2>
+        @for(project of profile.portfolio; track project.link){
+        <div class="portfolio-item">
+          <a [href]="project.link" target="_blank">
+            <p>{{ project.title }}</p>
+          </a>
+        </div>
+        }
+
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="profile-social">
+        <h2>Social Media Links</h2>
+        <!-- <div *ngFor="let social of socialMedia"> -->
+        <a [href]="profile.socialLinks.github" target="_blank">{{ profile.socialLinks.github }}</a> <br>
         <a [href]="profile.socialLinks.linkedin" target="_blank">{{ profile.socialLinks.linkedin }}</a>
-      <!-- </div> -->
-    </div>
-  
-    <!-- Contact Information -->
-    <div class="profile-contact">
-      <h2>Contact Information</h2>
-      <p><strong>Email:</strong> {{ profile.contact.email }}</p>
-      <p><strong>Phone:</strong> {{ profile.contact.phone }}</p>
+        <!-- </div> -->
+      </div>
+
+      <!-- Contact Information -->
+      <div class="profile-contact">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> {{ profile.contact.email }}</p>
+        <p><strong>Phone:</strong> {{ profile.contact.phone }}</p>
+      </div>
     </div>
   </div>
+</div>
 }
-
-  

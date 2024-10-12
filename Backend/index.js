@@ -9,7 +9,7 @@ const port = 3001;
 
 //Mock freelancer profile date
 const freelancerProfile = {
-    "profilePicture": "https://example.com/profile.jpg",
+    "profilePicture": "https://avatarfiles.alphacoders.com/222/222663.jpg",
   "name": "John Doe",
   "location": "Durban, Umhlanga",
   "hourlyRate": 50,
