@@ -1,5 +1,4 @@
 @if(profile){
-
 <div class="container">
   <div class="row">
     <div class="col-4 left-pane">
@@ -64,3 +63,12 @@
   </div>
 </div>
 }
+@else if(error){
+  <p class="alert alert-danger">
+    {{ error }}
+  </p>
+}
+@else {
+  <p>Loading Data...</p>
+}
+
