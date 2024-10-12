@@ -44,5 +44,15 @@
     text-decoration: none;
     color: blue;
   }
-  
+  :host {
+    display: block;
+    height: 120vh; /* Full height of the viewport */
+    background-image: url('/assets/backg.jpg');
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
+  .navbar-nav {
+    margin-right: auto;  /* Pushes the nav items to the right */
+  }
   

@@ -1,15 +1,4 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
 
-
-
-// @NgModule({
-//   declarations: [],
-//   imports: [
-//     CommonModule
-//   ]
-// })
-// export class AppRoutingModule { }
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

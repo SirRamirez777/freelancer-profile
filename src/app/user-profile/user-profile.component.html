@@ -1,7 +1,30 @@
 @if(profile){
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo3.jpg" alt="Logo" style="width:40px;">
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
 <div class="container">
   <div class="row">
-    <div class="col-4 left-pane">
+    <div class="col-4 left-pane" style="background-color: #ddf0d3;">
     <img [src]="profile.profilePicture" alt="Profile Picture" class="img-thumbnail img-fluid">
 
       <!-- Name and Location -->
@@ -30,7 +53,7 @@
     </div>
 
 
-    <div class="col-8 right-pane">
+    <div class="col-8 right-pane" style="background-color: #d0e2c6;">
       <!-- Portfolio Section -->
       <div class="profile-portfolio">
         <h2>Portfolio</h2>
@@ -72,3 +95,7 @@
   <p>Loading Data...</p>
 }
 
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+  <p>© Copyright 2024 Romeo Khoza | All Rights Reserved</p>
+</div>
