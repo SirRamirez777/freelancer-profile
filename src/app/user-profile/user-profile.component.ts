@@ -38,7 +38,7 @@ export class UserProfileComponent implements OnInit {
   error: string | undefined = undefined;
 
   constructor(private http:HttpClient) {}
-  
+
 
   ngOnInit(): void {
     this.http.get<UserProfile>('http://localhost:3001').subscribe(data => {

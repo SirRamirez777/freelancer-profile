@@ -3,43 +3,43 @@
     margin: 0 auto;
     padding: 20px;
   }
-  
+
   .profile-picture img {
     width: 150px;
     height: 100px;
     border-radius: 20%;
   }
-  
+
   .profile-info h1 {
     font-size: 2em;
   }
-  
+
   .profile-bio, .profile-skills, .profile-portfolio, .profile-social, .profile-contact {
     margin-top: 20px;
   }
-  
+
   .portfolio-item {
     margin-bottom: 15px;
   }
-  
+
   .portfolio-item img {
     width: 100px;
     height: 100px;
   }
-  
+
   .portfolio-item p {
     font-size: 1.1em;
   }
-  
+
   ul {
     list-style: none;
     padding: 0;
   }
-  
+
   ul li {
     margin: 5px 0;
   }
-  
+
   a {
     text-decoration: none;
     color: blue;
@@ -55,4 +55,81 @@
   .navbar-nav {
     margin-right: auto;  /* Pushes the nav items to the right */
   }
-  
+  .loading-message {
+    display: flex;
+    flex-direction: column; /* Stack the spinner and text vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3; /* Light gray */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Continuous rotation */
+    margin-bottom: 20px; /* Space between spinner and text */
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .img-thumbnail {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+  }
+
+  .img-thumbnail:hover {
+    transform: scale(1.1); /* Scale the image to 110% when hovered */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+  }
+
+  a {
+    text-decoration: none; /* Remove the default underline */
+    color: #333; /* Default text color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+  }
+
+  a:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge the link on hover */
+  }
+
+  a i {
+    margin-right: 5px; /* Add some space between the icon and the text */
+  }
+
+  a:hover i {
+    color: #007bff; /* Change the icon color along with the text on hover */
+  }
+
+  .typing {
+    font-family: Arial;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 60, 0); }
+    }
+
+
+
+
+
+
+
+
