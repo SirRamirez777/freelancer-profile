@@ -46,21 +46,21 @@
   }
   :host {
     display: block;
-    height: 120vh; /* Full height of the viewport */
+    height: 120vh;
     background-image: url('/assets/bg5.jpg');
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center center; /* Center the background */
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat; /* Prevent the image from repeating */
   }
   .navbar-nav {
-    margin-right: auto;  /* Pushes the nav items to the right */
+    margin-right: auto;
   }
   .loading-message {
     display: flex;
     flex-direction: column; /* Stack the spinner and text vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     margin: 0;
   }
 
@@ -70,8 +70,8 @@
     border: 6px solid #f3f3f3; /* Light gray */
     border-top: 6px solid #3498db; /* Blue */
     border-radius: 50%;
-    animation: spin 1s linear infinite; /* Continuous rotation */
-    margin-bottom: 20px; /* Space between spinner and text */
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
   }
 
   @keyframes spin {
@@ -83,27 +83,27 @@
   }
 
   .img-thumbnail:hover {
-    transform: scale(1.1); /* Scale the image to 110% when hovered */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
   a {
-    text-decoration: none; /* Remove the default underline */
-    color: #333; /* Default text color */
+    text-decoration: none;
+    color: #333;
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
   }
 
   a:hover {
-    color: #007bff; /* Change color on hover */
-    transform: scale(1.05); /* Slightly enlarge the link on hover */
+    color: #007bff;
+    transform: scale(1.05);
   }
 
   a i {
-    margin-right: 5px; /* Add some space between the icon and the text */
+    margin-right: 5px;
   }
 
   a:hover i {
-    color: #007bff; /* Change the icon color along with the text on hover */
+    color: #007bff;
   }
 
   .typing {
@@ -125,6 +125,31 @@
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 60, 0); }
     }
+    /* For desktops */
+@media (min-width: 1024px) {
+  .container {
+      padding: 20px;
+  }
+}
+
+/* For tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+  .left-pane, .right-pane {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
 
 
 
