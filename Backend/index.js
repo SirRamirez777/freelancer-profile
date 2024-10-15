@@ -1,11 +1,16 @@
 const express = require('express');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 
 app.use(cors());
 
-const port = 3001;
+const port = process.env.PORT || 3001;
+//  const port = 3001;
+// const port = process.env.PORT || 3001;
 
 //Mock freelancer profile date
 const freelancerProfile = {
