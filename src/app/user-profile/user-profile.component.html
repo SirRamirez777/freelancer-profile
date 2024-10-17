@@ -33,47 +33,128 @@
       <!-- Name and Location -->
       <div class="profile-info">
         <h1>{{ userData.first_name }}&nbsp;{{ userData.last_name }}</h1>
-        <h1></h1>
+        <p><i class="fa-regular fa-envelope"></i>&nbsp;<strong>Email:</strong>{{ userData.email }}</p>
+        <p><i class="fa-regular fa-user"></i>&nbsp;<strong>Username:</strong>{{ userData.username }}</p>
+        <p><i class="fa-solid fa-tag"></i>&nbsp;<strong>Role:</strong>{{ userData.role }}</p>
+        <p><i class="fa-solid fa-chart-line"></i>&nbsp;<strong>IsActive:</strong>{{ userData.is_active }}</p>
         <!-- <p><i class="fa fa-thin fa-location-dot">&nbsp;</i><strong>Location:</strong> {{ profile.location }}</p> -->
-        <p><i class="fa fa-thin fa-wallet"></i>&nbsp;<strong>Hourly Rate:</strong> R{{ userData.profile.hourly_rate }} / hour</p>
+        <p><i class="fa fa-thin fa-coins"></i>&nbsp;<strong>Hourly Rate:</strong> R{{ userData.profile.hourly_rate }} / hour</p>
       </div>
 
       <!-- Bio/Description Section -->
       <div class="profile-bio">
-        <h2>Bio</h2>
+        <h4>Bio</h4>
         <p class="typing">{{ userData.profile.bio }}</p>
       </div>
 
       <!-- Skills Section -->
       <div class="profile-skills">
-        <h2>Skills</h2>
+        <h4>Skills</h4>
         <ul>
           @for(skill of userData.profile.skills; track skill.name){
+          <li>{{ skill.id }}</li>
           <li>{{ skill.name }}</li>
+          <li>{{ skill.level }}</li>
           }
-
         </ul>
-
       </div>
     </div>
 
 
+
     <div class="col-lg-8 col-md-6 col-sm-12 right-pane" style="background-color: #d0e2c6;">
       <!-- Portfolio Section -->
+      <div class="profile-experience">
+        <h4>Experience</h4>
+        <ul>
+          @for(project of userData.profile.experiences; track project.company){
+          <li>{{ project.id }}</li>
+          <li>{{ project.company }}</li>
+          <li>{{ project.position }}</li>
+          <li>{{ project.start_date }}</li>
+          <li>{{ project.end_date }}</li>
+          <li>{{ project.description }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="profile-education">
+        <h4>Education</h4>
+        <ul>
+          @for(project of userData.profile.education; track project.degree){
+          <li>{{ project.id }}</li>
+          <li>{{ project.degree }}</li>
+          <li>{{ project.field_of_study }}</li>
+          <li>{{ project.start_date }}</li>
+          <li>{{ project.end_date }}</li>
+
+          }
+        </ul>
+      </div>
+      <div class="profile-certifications">
+        <h4>Certifications</h4>
+        <ul>
+          @for(project of userData.profile.certifications; track project.name){
+          <li>{{ project.id }}</li>
+          <li>{{ project.name }}</li>
+          <li>{{ project.issuing_organization }}</li>
+          <li>{{ project.issue_date }}</li>
+          <li>{{ project.expiration_date }}</li>
+
+          }
+        </ul>
+      </div>
+
+      <div class="profile-portfolio_items">
+        <h4>Portfolio_items</h4>
+        <ul>
+          @for(project of userData.profile.portfolio_items; track project.title){
+          <li>{{ project.id }}</li>
+          <li>{{ project.title }}</li>
+          <li>{{ project.description }}</li>
+          <li>{{ project.url }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="profile-reviews">
+        <h4>Reviews</h4>
+        <ul>
+          @for(project of userData.profile.reviews; track project.id){
+          <li>{{ project.id }}</li>
+          <li>{{ project.client_id }}</li>
+          <li>{{ project.rating }}</li>
+          <li>{{ project.comment }}</li>
+          <li>{{ project.created_at }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="profile-social_links">
+        <h4>Social Links</h4>
+        <ul>
+          @for(project of userData.profile.social_links; track project.linkedin){
+          <li>{{ project.linkedin }}</li>
+          <li>{{ project.github }}</li>
+          }
+        </ul>
+      </div>
+
+
       <div class="profile-portfolio">
-        <h2>Portfolio</h2>
+        <h4>Portfolio</h4>
         @for(project of userData.profile.portfolio_items; track project.url){
         <div class="portfolio-item">
-          <a [href]="project.url" target="_blank">
-            <p><i class="fa fa-light fa-diagram-project"></i>{{ project.title }}</p>
-          </a>
+          <a [href]="project.url" target="_blank"><p><i class="fa fa-light fa-diagram-project"></i>{{ project.title }}</p></a>
+          <a [href]="project.url" target="_blank"><p><i class="fa fa-light fa-diagram-project"></i>{{ project.description }}<p></a>
+          <a [href]="project.url" target="_blank"><p><i class="fa fa-light fa-diagram-project"></i>{{ project.url }}</p></a>
         </div>
         }
 
       </div>
 
       <div class="profile-bio">
-        <h2>Subscription</h2>
+        <h4>Subscription</h4>
         <p>{{userData.subscription.id}}</p>
         <p>{{userData.subscription.plan}}</p>
         <p>{{userData.subscription.start_date}}</p>

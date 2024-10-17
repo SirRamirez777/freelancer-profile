@@ -106,7 +106,7 @@
     color: #007bff;
   }
 
-  .typing {
+  /* .typing {
     font-family: Arial;
     overflow: hidden;
     border-right: .15em solid orange;
@@ -124,7 +124,7 @@
     @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 60, 0); }
-    }
+    } */
     /* For desktops */
 @media (min-width: 1024px) {
   .container {
