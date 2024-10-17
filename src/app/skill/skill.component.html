@@ -1,0 +1,23 @@
+<p>skill works!</p>
+
+
+<!-- Skills Section -->
+<div class="profile-skills">
+  <h2>Skills</h2>
+  <ul>
+    <li *ngFor="let skill of profile.skills; trackBy: trackBySkill">
+      {{ skill.name }} ({{ getSkillLevel(skill.level) }})
+      <div class="skill-level">
+        <i *ngFor="let star of [1, 2, 3]" class="fa"
+           [ngClass]="{
+             'fa-star': star <= skill.level,
+             'fa-star-o': star > skill.level
+           }">
+        </i>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+

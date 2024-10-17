@@ -34,6 +34,11 @@ interface UserProfile {
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  skills = [
+    { name: 'Angular', level: 3 },
+    { name: 'TypeScript', level: 2 },
+    { name: 'CSS', level: 1 }
+  ];
   profile: UserProfile | undefined = undefined;
   error: string | undefined = undefined;
 

@@ -1,0 +1,15 @@
+.skill-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.skill-name {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.skill-level i {
+  color: #FFD700; /* Gold color for stars */
+  margin-right: 5px;
+}
