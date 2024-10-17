@@ -1,0 +1,16 @@
+.portfolio-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.carousel-caption h3 {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+}
+
+.carousel-caption p {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}

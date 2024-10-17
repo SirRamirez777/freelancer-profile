@@ -1,6 +1,7 @@
 
 import {HttpClient} from "@angular/common/http";
 import { Component, OnInit } from '@angular/core';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
 
 interface Portfolio {
   title : string
@@ -106,6 +107,8 @@ interface Data{
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
+  standalone: true,
+  imports: [PortfolioComponent],
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
@@ -124,6 +127,6 @@ export class UserProfileComponent implements OnInit {
       console.log(err)
     })
   }
-  
+
 }
 
