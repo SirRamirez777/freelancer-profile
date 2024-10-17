@@ -1,35 +1,25 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-skill',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './skill.component.html',
-//   styleUrl: './skill.component.css'
-// })
-// export class SkillComponent {
-
-// }
 
 import { Component, Input } from '@angular/core';
 import { NgClass, NgFor, NgIf } from "@angular/common";
 
 @Component({
   selector: 'app-skill',
+  template: `
+    <div>
+      <p>{{ skillName }} (Level: {{ skillLevel }})</p>
+      <!-- Your star logic here -->
+    </div>
+  `,
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css'],
   standalone: true,
   imports: [NgClass, NgIf, NgFor],
 
 })
-export class ProfileComponent {
-  profile = {
-    skills: [
-      { name: 'Angular', level: 3 },
-      { name: 'TypeScript', level: 2 },
-      { name: 'CSS', level: 1 }
-    ]
-  };
+export class SkillComponent {
+  @Input() skillName: string = '';
+  @Input() skillLevel: number = 0;
+profile: any;
 
   // This method will track by skill name to optimize re-rendering.
   trackBySkill(index: number, skill: any): string {

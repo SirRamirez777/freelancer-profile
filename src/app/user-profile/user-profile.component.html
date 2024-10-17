@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@if(profile){
+@if(userData){
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
@@ -28,30 +28,32 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12 left-pane" style="background-color: #ddf0d3;">
-    <img [src]="profile.profilePicture" alt="Profile Picture" class="img-thumbnail img-fluid">
+    <!-- <img [src]="userData.profilePicture" alt="Profile Picture" class="img-thumbnail img-fluid"> -->
 
       <!-- Name and Location -->
       <div class="profile-info">
-        <h1>{{ profile.name }}</h1>
-        <p><i class="fa fa-thin fa-location-dot">&nbsp;</i><strong>Location:</strong> {{ profile.location }}</p>
-        <p><i class="fa fa-thin fa-wallet"></i>&nbsp;<strong>Hourly Rate:</strong> R{{ profile.hourlyRate }} / hour</p>
+        <h1>{{ userData.first_name }}&nbsp;{{ userData.last_name }}</h1>
+        <h1></h1>
+        <!-- <p><i class="fa fa-thin fa-location-dot">&nbsp;</i><strong>Location:</strong> {{ profile.location }}</p> -->
+        <p><i class="fa fa-thin fa-wallet"></i>&nbsp;<strong>Hourly Rate:</strong> R{{ userData.profile.hourly_rate }} / hour</p>
       </div>
 
       <!-- Bio/Description Section -->
       <div class="profile-bio">
         <h2>Bio</h2>
-        <p class="typing">{{ profile.bio }}</p>
+        <p class="typing">{{ userData.profile.bio }}</p>
       </div>
 
       <!-- Skills Section -->
       <div class="profile-skills">
         <h2>Skills</h2>
         <ul>
-          @for(skill of profile.skills; track skill){
-          <li>{{ skill }}</li>
+          @for(skill of userData.profile.skills; track skill.name){
+          <li>{{ skill.name }}</li>
           }
 
         </ul>
+
       </div>
     </div>
 
@@ -60,9 +62,9 @@
       <!-- Portfolio Section -->
       <div class="profile-portfolio">
         <h2>Portfolio</h2>
-        @for(project of profile.portfolio; track project.link){
+        @for(project of userData.profile.portfolio_items; track project.url){
         <div class="portfolio-item">
-          <a [href]="project.link" target="_blank">
+          <a [href]="project.url" target="_blank">
             <p><i class="fa fa-light fa-diagram-project"></i>{{ project.title }}</p>
           </a>
         </div>
@@ -70,27 +72,37 @@
 
       </div>
 
-      <!-- Social Media Links -->
-      <div class="profile-social">
-        <h2>Social Media Links</h2>
-        <a [href]="profile.socialLinks.github" target="_blank">
-          <i class="fa-brands fa-github"></i> {{ profile.socialLinks.github }}
-        </a> <br>
-        <a [href]="profile.socialLinks.linkedin" target="_blank">
-          <i class="fa-brands fa-linkedin"></i> {{ profile.socialLinks.linkedin }}
-        </a>
-        <!-- </div> -->
+      <div class="profile-bio">
+        <h2>Subscription</h2>
+        <p>{{userData.subscription.id}}</p>
+        <p>{{userData.subscription.plan}}</p>
+        <p>{{userData.subscription.start_date}}</p>
+        <p>{{userData.subscription.end_date}}</p>
+        <p>{{userData.subscription.is_active}}</p>
       </div>
 
+      <!-- Social Media Links -->
+      <!-- <div class="profile-social">
+        <h2>Social Media Links</h2>
+        <a [href]="profile.Social_links.github" target="_blank">
+          <i class="fa-brands fa-github"></i> {{ profile.Social_links.github }}
+        </a> <br>
+        <a [href]="profile.Social_links.linkedin" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> {{ profile.Social_links.linkedin }}
+        </a>
+
+      </div> -->
+
       <!-- Contact Information -->
-      <div class="profile-contact">
+      <!-- <div class="profile-contact">
         <h2>Contact Information</h2>
         <p><i class="fa-solid fa-envelope">&nbsp;&nbsp;</i>
           <strong>Email:</strong> {{ profile.contact.email }}</p>
         <p>
           <i class="fa-solid fa-phone">&nbsp;&nbsp;</i>
           <strong>Phone:</strong> {{ profile.contact.phone }}</p>
-      </div>
+      </div> -->
+
     </div>
   </div>
 </div>
