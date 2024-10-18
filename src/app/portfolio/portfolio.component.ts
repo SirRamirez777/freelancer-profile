@@ -14,19 +14,20 @@ import { CommonModule } from '@angular/common';
 export class PortfolioComponent {
   portfolioItems = [
     {
-      imageUrl: 'assets/tree1.jpg',
-      title: 'Project 1',
-      description: 'Description for Project 1'
+      imageUrl: 'assets/weatherapp1.jpg',
+      title: 'Weather App',
+      description: 'Weather app'
     },
     {
-      imageUrl: 'assets/tree2.jpg',
-      title: 'Project 2',
-      description: 'Description for Project 2'
+      imageUrl: 'assets/hamburgerfood.jpg',
+      title: 'Hamburger Food',
+      description: 'Hamburger food website'
     },
     {
-      imageUrl: 'assets/tree3.jpg',
-      title: 'Project 3',
-      description: 'Description for Project 3'
-    }
+      imageUrl: 'assets/PongGame.jpg',
+      title: 'Pong-Game',
+      description: '2 Player pong game'
+    },
+
   ];
 }
