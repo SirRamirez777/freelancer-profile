@@ -150,6 +150,100 @@
   }
 }
 
+/*
+ * Globals
+ */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom default button */
+
+
+.banner-wrap {
+  background-image: url(/assets/bg5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+
+}
+
+.overlay {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  opacity: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.scrolling {
+  background-color: black;
+  opacity: 90%;
+  transition: all 0.5s;
+}
+.profile-skills {
+  margin-top: 20px;
+}
+
+.skills-grid {
+  display: flex;              /* Use Flexbox to align items in a row */
+  justify-content: flex-start; /* Align items at the start */
+  flex-wrap: wrap;             /* Allow wrapping if there are too many skills */
+}
+
+.skill-item {
+  flex: 1 1 30%;               /* Each skill takes up 30% of the width */
+  padding: 10px;
+  box-sizing: border-box;       /* Include padding in width calculation */
+  text-align: left;             /* Align text to the left */
+}
+
+.skill-item div {
+  margin-bottom: 8px;          /* Add space between skill details */
+}
+
+@media (max-width: 768px) {
+  .skill-item {
+    flex: 1 1 45%;             /* On smaller screens, skills take up 45% of the width */
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item {
+    flex: 1 1 100%;            /* On mobile, skills stack on top of each other */
+  }
+}
+
+
+
 
 
 
