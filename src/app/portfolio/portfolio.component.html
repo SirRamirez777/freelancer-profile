@@ -7,7 +7,9 @@
       <img [src]="item.imageUrl" alt="{{ item.title }}" class="d-block w-100">
       <div class="carousel-caption">
         <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <p>
+          <a [href]="item.siteUrl" target="_blank">{{ item.description }}</a> 
+        </p>
       </div>
     </slide>
   </carousel>

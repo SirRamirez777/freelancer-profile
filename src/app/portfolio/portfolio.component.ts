@@ -16,17 +16,20 @@ export class PortfolioComponent {
     {
       imageUrl: 'assets/weatherapp1.jpg',
       title: 'Weather App',
-      description: 'Weather app'
+      description: 'Weather app',
+      siteUrl: 'https://openweather2.netlify.app'
     },
     {
       imageUrl: 'assets/hamburgerfood.jpg',
       title: 'Hamburger Food',
-      description: 'Hamburger food website'
+      description: 'Hamburger food website',
+      siteUrl: 'https://hamburgerfood101.netlify.app/'
     },
     {
       imageUrl: 'assets/PongGame.jpg',
       title: 'Pong-Game',
-      description: '2 Player pong game'
+      description: 'Start game',
+      siteUrl: 'https://pong-game101.netlify.app'
     },
 
   ];
